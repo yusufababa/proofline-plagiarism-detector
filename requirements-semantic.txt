@@ -1,0 +1,4 @@
+# Optional. Install only when the lexical version is working reliably.
+# The semantic model is loaded lazily so it does not consume RAM at startup.
+sentence-transformers>=3.4,<7.0
+

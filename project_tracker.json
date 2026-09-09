@@ -1,0 +1,27 @@
+{
+  "updated": "2026-09-08",
+  "overall_percent": 30,
+  "objectives": [
+    {
+      "id": 1,
+      "title": "Preprocessing and similarity algorithms",
+      "status": "in_progress",
+      "percent": 70,
+      "next": "Validate lexical results and add quotation and bibliography exclusions"
+    },
+    {
+      "id": 2,
+      "title": "Unified intelligent decision model",
+      "status": "in_progress",
+      "percent": 25,
+      "next": "Create labelled data and calibrate the hybrid model"
+    },
+    {
+      "id": 3,
+      "title": "Performance evaluation",
+      "status": "not_started",
+      "percent": 0,
+      "next": "Select the dataset and define the evaluation protocol"
+    }
+  ]
+}

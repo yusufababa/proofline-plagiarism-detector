@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explainable academic text-similarity research prototype">
+  <title>Proofline | Explainable Similarity Review</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Proofline home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5M10 13h5M10 17h5"/></svg>
+      </span>
+      <span><strong>Proofline</strong><small>Academic similarity review</small></span>
+    </a>
+    <div class="topbar-actions">
+      <span class="system-dot"><i></i> Local prototype</span>
+      <span id="model-status" class="model-chip">Checking model...</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <div class="intro-copy">
+        <p class="kicker">EXPLAINABLE BY DESIGN</p>
+        <h1>Review similarity.<br><span>See the evidence.</span></h1>
+        <p class="intro-text">Compare an academic document with a lawful local corpus. Proofline shows the source, the matched passage, and each similarity signal so a human can make the final judgement.</p>
+        <div class="intro-notes">
+          <span><svg viewBox="0 0 20 20"><path d="m5 10 3 3 7-7"/></svg> Files stay local</span>
+          <span><svg viewBox="0 0 20 20"><path d="m5 10 3 3 7-7"/></svg> Evidence, not accusation</span>
+        </div>
+      </div>
+      <aside class="project-meter" aria-label="Project completion">
+        <div class="meter-label"><span>Build progress</span><strong id="overall-percent">--%</strong></div>
+        <div class="meter-track"><i id="overall-bar"></i></div>
+        <p id="updated">Loading project tracker...</p>
+      </aside>
+    </section>
+
+    <nav class="workflow" aria-label="Review workflow">
+      <div class="workflow-step active"><span>01</span><div><strong>Source library</strong><small>Add comparison documents</small></div></div>
+      <i aria-hidden="true"></i>
+      <div class="workflow-step"><span>02</span><div><strong>Similarity scan</strong><small>Analyse one submission</small></div></div>
+      <i aria-hidden="true"></i>
+      <div class="workflow-step"><span>03</span><div><strong>Evidence review</strong><small>Inspect passage matches</small></div></div>
+    </nav>
+
+    <section class="workspace" aria-label="Document workspace">
+      <article class="upload-card source-card">
+        <header class="card-header">
+          <span class="card-icon source-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 11h6"/></svg>
+          </span>
+          <div><p class="card-step">STEP 1</p><h2>Build your source library</h2><p>Add academic materials that you have permission to use for comparison.</p></div>
+        </header>
+
+        <form id="reference-form">
+          <div id="reference-dropzone" class="dropzone" tabindex="0" role="button" aria-controls="reference-file">
+            <input id="reference-file" class="file-input" type="file" accept=".txt,.docx,.pdf" multiple>
+            <span class="drop-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 17H6a4 4 0 0 1-.4-8A6.5 6.5 0 0 1 18 8a4.5 4.5 0 0 1 0 9h-2"/><path d="m9 13 3-3 3 3M12 10v10"/></svg>
+            </span>
+            <strong>Drop reference files here</strong>
+            <p>or <span>choose from your computer</span></p>
+            <small>TXT, DOCX or text-based PDF / up to 10 MB each</small>
+          </div>
+          <div id="reference-queue" class="file-queue" aria-live="polite"></div>
+          <div class="form-actions">
+            <p id="reference-status" class="status" role="status"></p>
+            <button id="reference-submit" class="button secondary" type="submit" disabled>
+              <svg viewBox="0 0 20 20"><path d="M10 3v10M6 7l4-4 4 4M4 12v4h12v-4"/></svg>
+              Add to library
+            </button>
+          </div>
+        </form>
+
+        <div class="library">
+          <div class="library-heading"><div><span class="library-count" id="corpus-count">0</span><strong>Sources ready</strong></div><small>Local corpus</small></div>
+          <ul id="corpus-list" class="corpus-list"><li class="empty-row">No sources added yet.</li></ul>
+        </div>
+      </article>
+
+      <article class="upload-card scan-card">
+        <header class="card-header">
+          <span class="card-icon scan-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5M10 13h5M10 17h3"/></svg>
+          </span>
+          <div><p class="card-step">STEP 2</p><h2>Scan a submission</h2><p>Choose one document. It will be removed from temporary storage after processing.</p></div>
+        </header>
+
+        <form id="scan-form">
+          <div id="scan-dropzone" class="dropzone scan-dropzone" tabindex="0" role="button" aria-controls="scan-file">
+            <input id="scan-file" class="file-input" type="file" accept=".txt,.docx,.pdf">
+            <span class="drop-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 17H6a4 4 0 0 1-.4-8A6.5 6.5 0 0 1 18 8a4.5 4.5 0 0 1 0 9h-2"/><path d="m9 13 3-3 3 3M12 10v10"/></svg>
+            </span>
+            <strong>Drop a document to review</strong>
+            <p>or <span>browse your files</span></p>
+            <small>One document / TXT, DOCX or text-based PDF</small>
+          </div>
+          <div id="scan-queue" class="file-queue" aria-live="polite"></div>
+          <div class="form-actions scan-actions">
+            <p id="scan-status" class="status" role="status"></p>
+            <button id="scan-submit" class="button primary" type="submit" disabled>
+              <svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5"/><path d="m13 13 4 4"/></svg>
+              Analyse document
+            </button>
+          </div>
+        </form>
+
+        <div class="privacy-note">
+          <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.8 8.1 7 10 4.2-1.9 7-5.4 7-10V6z"/><path d="m9 12 2 2 4-5"/></svg>
+          <div><strong>Private by default</strong><p>Your submission is processed locally and deleted from temporary storage after the scan.</p></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="results-section" class="results hidden" aria-live="polite">
+      <header class="results-header">
+        <div><p class="kicker">STEP 3 / EVIDENCE REVIEW</p><h2>Similarity findings</h2><p id="result-summary">Review the strongest passage-level matches below.</p></div>
+        <div class="score-ring"><strong id="overall-score">0%</strong><span>overall<br>similarity</span></div>
+      </header>
+      <div id="warnings" class="warnings"></div>
+      <div id="matches" class="matches"></div>
+    </section>
+
+    <section class="objectives-section">
+      <div class="section-title"><div><p class="kicker">RESEARCH BUILD</p><h2>Objective tracker</h2></div><p>Engineering progress, not model accuracy.</p></div>
+      <div id="objectives" class="objective-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer"><strong>Proofline</strong><span>Similarity evidence for responsible academic review.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
+
