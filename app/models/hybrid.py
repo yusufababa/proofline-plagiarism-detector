@@ -21,12 +21,13 @@ class HybridSimilarityModel:
         return round(combined, 4)
 
 
-def review_band(score: float) -> str:
-    """Provisional bands that Objective 3 will replace with calibrated values."""
+def review_band(score: float, medium_threshold: float = 0.46, high_threshold: float = 0.80) -> str:
+    """Assign validation-calibrated evidence priority without deciding misconduct."""
 
-    if score >= 0.75:
+    if not 0 <= medium_threshold < high_threshold <= 1:
+        raise ValueError("Review-band thresholds must be ordered between 0 and 1.")
+    if score >= high_threshold:
         return "high"
-    if score >= 0.50:
+    if score >= medium_threshold:
         return "medium"
     return "low"
-

@@ -1,0 +1,25 @@
+PROOFLINE LECTURER DEMONSTRATION PACK
+
+1. Start the application from the project directory:
+   powershell -ExecutionPolicy Bypass -File .\run.ps1
+
+2. Open http://127.0.0.1:8000 in a browser.
+
+3. Under Build your source library, upload all three DOCX files from the Corpus folder.
+
+4. Select Add to library and wait for each file to complete.
+
+5. Under Scan a submission, upload Student Submission Demo.docx from the Document to Scan folder.
+
+6. Select Analyse document.
+
+EXPECTED LEXICAL BASELINE RESULT
+
+- Total submitted passages: 5
+- Matched passages: 3
+- Overall similarity: 50.38 percent
+- Review bands: 2 high and 1 medium
+
+Read Proofline Demonstration Output Report.docx for the full explanation of the test, scores, source-code responsibilities, and limitations.
+
+The demonstration texts were prepared for software testing. They are not published academic sources.

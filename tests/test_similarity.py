@@ -28,6 +28,12 @@ class SimilarityTests(unittest.TestCase):
         self.assertEqual(review_band(0.6), "medium")
         self.assertEqual(review_band(0.2), "low")
 
+    def test_review_band_accepts_mode_specific_calibration(self):
+        self.assertEqual(review_band(0.70, medium_threshold=0.25, high_threshold=0.69), "high")
+        self.assertEqual(review_band(0.30, medium_threshold=0.25, high_threshold=0.69), "medium")
+        with self.assertRaises(ValueError):
+            review_band(0.5, medium_threshold=0.8, high_threshold=0.7)
+
 
 if __name__ == "__main__":
     unittest.main()

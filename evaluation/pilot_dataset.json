@@ -1,0 +1,98 @@
+{
+  "name": "Proofline synthetic pilot passage pairs",
+  "version": "1.0",
+  "license": "CC0-1.0",
+  "description": "Original synthetic examples for engineering tests only; replace or extend with a documented research dataset before final dissertation claims.",
+  "sources": [
+    {
+      "source_id": "academic-integrity",
+      "title": "Academic Integrity",
+      "split": "train",
+      "author": "Adeyemi",
+      "year": 2023,
+      "source_text": "Academic integrity requires students to acknowledge every source that contributes ideas, evidence, or distinctive wording to their work.",
+      "cases": [
+        {"case_id": "ai-direct", "category": "direct_copy", "candidate_text": "Academic integrity requires students to acknowledge every source that contributes ideas, evidence, or distinctive wording to their work.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "ai-edited", "category": "light_edit", "candidate_text": "Academic integrity requires learners to acknowledge each source contributing ideas, evidence, or distinctive wording to their assignments.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "ai-paraphrase", "category": "paraphrase", "candidate_text": "Honest scholarship depends on giving credit whenever another person's arguments, facts, or unique expressions influence an assignment.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "ai-cited", "category": "cited_quotation", "candidate_text": "\"Academic integrity requires students to acknowledge every source that contributes ideas, evidence, or distinctive wording to their work\" (Adeyemi, 2023).", "similarity_label": 1, "review_label": 0},
+        {"case_id": "ai-unrelated", "category": "unrelated", "candidate_text": "Regular rainfall improves soil moisture and supports the early growth of maize crops.", "similarity_label": 0, "review_label": 0}
+      ]
+    },
+    {
+      "source_id": "cloud-computing",
+      "title": "Cloud Computing",
+      "split": "train",
+      "author": "Bello",
+      "year": 2022,
+      "source_text": "Cloud computing allows organisations to obtain computing resources on demand without maintaining all physical infrastructure locally.",
+      "cases": [
+        {"case_id": "cc-direct", "category": "direct_copy", "candidate_text": "Cloud computing allows organisations to obtain computing resources on demand without maintaining all physical infrastructure locally.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "cc-edited", "category": "light_edit", "candidate_text": "Cloud services allow companies to access computing resources when needed without keeping every physical system on site.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "cc-paraphrase", "category": "paraphrase", "candidate_text": "Businesses can rent processing and storage as required, reducing the need to own and operate their entire hardware estate.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "cc-cited", "category": "cited_quotation", "candidate_text": "\"Cloud computing allows organisations to obtain computing resources on demand without maintaining all physical infrastructure locally\" (Bello, 2022).", "similarity_label": 1, "review_label": 0},
+        {"case_id": "cc-unrelated", "category": "unrelated", "candidate_text": "A balanced diet supplies vitamins and minerals needed for healthy development.", "similarity_label": 0, "review_label": 0}
+      ]
+    },
+    {
+      "source_id": "digital-learning",
+      "title": "Digital Learning",
+      "split": "validation",
+      "author": "Okafor",
+      "year": 2024,
+      "source_text": "Digital learning platforms can widen access to education when students have reliable devices, connectivity, and appropriate support.",
+      "cases": [
+        {"case_id": "dl-direct", "category": "direct_copy", "candidate_text": "Digital learning platforms can widen access to education when students have reliable devices, connectivity, and appropriate support.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "dl-edited", "category": "light_edit", "candidate_text": "Online learning platforms may expand educational access when learners possess dependable devices, internet connections, and suitable support.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "dl-paraphrase", "category": "paraphrase", "candidate_text": "Technology can bring teaching to more people, but only if learners can get online, use suitable equipment, and receive help.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "dl-cited", "category": "cited_quotation", "candidate_text": "\"Digital learning platforms can widen access to education when students have reliable devices, connectivity, and appropriate support\" (Okafor, 2024).", "similarity_label": 1, "review_label": 0},
+        {"case_id": "dl-unrelated", "category": "unrelated", "candidate_text": "Urban drainage channels must be maintained before the annual rainy season begins.", "similarity_label": 0, "review_label": 0}
+      ]
+    },
+    {
+      "source_id": "cybersecurity",
+      "title": "Cybersecurity Awareness",
+      "split": "validation",
+      "author": "Musa",
+      "year": 2021,
+      "source_text": "Cybersecurity awareness training helps employees recognise suspicious messages and reduces the likelihood of successful phishing attacks.",
+      "cases": [
+        {"case_id": "cy-direct", "category": "direct_copy", "candidate_text": "Cybersecurity awareness training helps employees recognise suspicious messages and reduces the likelihood of successful phishing attacks.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "cy-edited", "category": "light_edit", "candidate_text": "Security awareness education helps staff identify suspicious emails and lowers the chance that phishing attempts will succeed.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "cy-paraphrase", "category": "paraphrase", "candidate_text": "Teaching workers how online scams appear makes them less likely to be deceived by fraudulent communication.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "cy-cited", "category": "cited_quotation", "candidate_text": "\"Cybersecurity awareness training helps employees recognise suspicious messages and reduces the likelihood of successful phishing attacks\" (Musa, 2021).", "similarity_label": 1, "review_label": 0},
+        {"case_id": "cy-unrelated", "category": "unrelated", "candidate_text": "Solar panels generate electricity by converting energy from sunlight into usable power.", "similarity_label": 0, "review_label": 0}
+      ]
+    },
+    {
+      "source_id": "renewable-energy",
+      "title": "Renewable Energy",
+      "split": "test",
+      "author": "Eze",
+      "year": 2020,
+      "source_text": "Renewable energy systems can lower greenhouse gas emissions while improving energy security through diverse local resources.",
+      "cases": [
+        {"case_id": "re-direct", "category": "direct_copy", "candidate_text": "Renewable energy systems can lower greenhouse gas emissions while improving energy security through diverse local resources.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "re-edited", "category": "light_edit", "candidate_text": "Renewable power systems can reduce greenhouse emissions and strengthen energy security by using varied local resources.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "re-paraphrase", "category": "paraphrase", "candidate_text": "Drawing power from several domestic, naturally replenished sources both protects the climate and makes supply more dependable.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "re-cited", "category": "cited_quotation", "candidate_text": "\"Renewable energy systems can lower greenhouse gas emissions while improving energy security through diverse local resources\" (Eze, 2020).", "similarity_label": 1, "review_label": 0},
+        {"case_id": "re-unrelated", "category": "unrelated", "candidate_text": "Patient records should be stored securely and accessed only by authorised clinical staff.", "similarity_label": 0, "review_label": 0}
+      ]
+    },
+    {
+      "source_id": "public-health",
+      "title": "Public Health Communication",
+      "split": "test",
+      "author": "Ibrahim",
+      "year": 2023,
+      "source_text": "Clear public health communication enables communities to understand risks and make informed decisions during disease outbreaks.",
+      "cases": [
+        {"case_id": "ph-direct", "category": "direct_copy", "candidate_text": "Clear public health communication enables communities to understand risks and make informed decisions during disease outbreaks.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "ph-edited", "category": "light_edit", "candidate_text": "Clear health communication allows communities to understand dangers and take informed decisions during outbreaks of disease.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "ph-paraphrase", "category": "paraphrase", "candidate_text": "When authorities explain an epidemic well, local people can judge the threat and choose appropriate actions based on evidence.", "similarity_label": 1, "review_label": 1},
+        {"case_id": "ph-cited", "category": "cited_quotation", "candidate_text": "\"Clear public health communication enables communities to understand risks and make informed decisions during disease outbreaks\" (Ibrahim, 2023).", "similarity_label": 1, "review_label": 0},
+        {"case_id": "ph-unrelated", "category": "unrelated", "candidate_text": "Database indexes can reduce query time when they are designed for frequently searched columns.", "similarity_label": 0, "review_label": 0}
+      ]
+    }
+  ]
+}

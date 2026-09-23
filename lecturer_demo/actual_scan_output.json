@@ -1,0 +1,53 @@
+{
+  "submitted_document": "Student Submission Demo.docx",
+  "model_mode": "lexical baseline",
+  "total_passages": 5,
+  "matched_passages": 3,
+  "reviewable_passages": 5,
+  "excluded_passages": 0,
+  "overall_score": 0.5038,
+  "review_thresholds": {
+    "detection": 0.15,
+    "medium": 0.25,
+    "high": 0.69
+  },
+  "matches": [
+    {
+      "submitted": "A digital learning management system gives students one location for lecture notes, assignments, announcements, and feedback from instructors.",
+      "source": "A digital learning management system gives students one location for lecture notes, assignments, announcements, and feedback from instructors.",
+      "source_document": "01 Digital Learning Reference.docx",
+      "word_cosine_score": 1.0,
+      "character_jaccard_score": 1.0,
+      "lexical_score": 1.0,
+      "semantic_score": null,
+      "hybrid_score": 1.0,
+      "review_band": "high"
+    },
+    {
+      "submitted": "Regular software updates close known security weaknesses before those weaknesses can be exploited on computers connected to the campus network.",
+      "source": "Regular software updates close known security weaknesses before those weaknesses can be exploited on computers connected to the campus network.",
+      "source_document": "02 Cybersecurity Reference.docx",
+      "word_cosine_score": 1.0,
+      "character_jaccard_score": 1.0,
+      "lexical_score": 1.0,
+      "semantic_score": null,
+      "hybrid_score": 1.0,
+      "review_band": "high"
+    },
+    {
+      "submitted": "When learning resources follow a consistent structure, students spend less time looking for course materials and can devote more attention to their academic work.",
+      "source": "When course resources are organized consistently, learners spend less time searching for materials and can focus more attention on academic tasks.",
+      "source_document": "01 Digital Learning Reference.docx",
+      "word_cosine_score": 0.5791,
+      "character_jaccard_score": 0.3785,
+      "lexical_score": 0.5189,
+      "semantic_score": null,
+      "hybrid_score": 0.5189,
+      "review_band": "medium"
+    }
+  ],
+  "warnings": [
+    "Review bands use pilot validation calibration and must be reconfirmed on the final research dataset.",
+    "Similarity is evidence for human review, not a misconduct decision."
+  ]
+}

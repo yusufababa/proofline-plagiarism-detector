@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="410" viewBox="0 0 900 410">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="30" y="38" font-family="Arial" font-size="24" font-weight="700" fill="#111827">Untouched Pilot Test F1</text>
+<text x="30" y="64" font-family="Arial" font-size="14" fill="#4b5563">Review decision after citation and quotation exclusions</text>
+<text x="30" y="117" font-family="Arial" font-size="15" fill="#111827">Lexical</text>
+<rect x="210" y="95" width="600" height="30" rx="5" fill="#e5e7eb"/>
+<rect x="210" y="95" width="480.0" height="30" rx="5" fill="#2563eb"/>
+<text x="700.0" y="116" font-family="Arial" font-size="14" font-weight="700" fill="#111827">0.8000</text>
+<text x="30" y="192" font-family="Arial" font-size="15" fill="#111827">Semantic</text>
+<rect x="210" y="170" width="600" height="30" rx="5" fill="#e5e7eb"/>
+<rect x="210" y="170" width="545.5" height="30" rx="5" fill="#7c3aed"/>
+<text x="765.5" y="191" font-family="Arial" font-size="14" font-weight="700" fill="#111827">0.9091</text>
+<text x="30" y="267" font-family="Arial" font-size="15" fill="#111827">Hybrid</text>
+<rect x="210" y="245" width="600" height="30" rx="5" fill="#e5e7eb"/>
+<rect x="210" y="245" width="600.0" height="30" rx="5" fill="#059669"/>
+<text x="820.0" y="266" font-family="Arial" font-size="14" font-weight="700" fill="#111827">1.0000</text>
+<text x="30" y="342" font-family="Arial" font-size="15" fill="#111827">Learned Fusion</text>
+<rect x="210" y="320" width="600" height="30" rx="5" fill="#e5e7eb"/>
+<rect x="210" y="320" width="600.0" height="30" rx="5" fill="#dc2626"/>
+<text x="820.0" y="341" font-family="Arial" font-size="14" font-weight="700" fill="#111827">1.0000</text>
+</svg>

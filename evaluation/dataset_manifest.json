@@ -1,0 +1,20 @@
+{
+  "selected_dataset": "PAN Plagiarism Corpus 2011 (PAN-PC-11)",
+  "doi": "10.5281/zenodo.3250095",
+  "official_url": "https://zenodo.org/records/3250095",
+  "publisher": "Zenodo",
+  "year": 2011,
+  "use_terms": "Free of charge for research; raw files treated as research-only and not redistributed with this project.",
+  "archive_size_gb": 1.7,
+  "reported_documents": 26939,
+  "reported_plagiarism_cases": 61064,
+  "local_subset": {
+    "status": "planned_not_downloaded",
+    "language_scope": "English suspicious passage to English source passage",
+    "positive_cases": 300,
+    "negative_cases": 300,
+    "split_by": "source_document_group",
+    "split_percent": {"train": 60, "validation": 20, "test": 20},
+    "random_seed": 20260920
+  }
+}

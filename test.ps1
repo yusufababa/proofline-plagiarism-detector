@@ -12,6 +12,6 @@ $pythonPath = if (Test-Path -LiteralPath '.venv\Scripts\python.exe') {
 
 & $pythonPath -m unittest discover -s tests -v
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-& $pythonPath -m compileall -q app tests
+& $pythonPath -c "import ast, pathlib; roots=('app','evaluation','tests'); files=[p for root in roots for p in pathlib.Path(root).rglob('*.py')]; [ast.parse(p.read_text(encoding='utf-8'), filename=str(p)) for p in files]; print(f'Python syntax checked: {len(files)} files')"
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 Write-Output 'All automated checks passed.'
-

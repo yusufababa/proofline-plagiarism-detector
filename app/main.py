@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.api.routes import router
 from app.core.config import settings
-from app.repositories import CorpusRepository
+from app.repositories import CorpusRepository, ScanRepository
 from app.services.scanner import ScanService
 
 
@@ -16,8 +16,11 @@ async def lifespan(app: FastAPI):
     corpus = CorpusRepository(settings.database_path, settings.reference_dir)
     corpus.initialize()
     corpus.sync_existing_files(settings.allowed_extensions)
+    scans = ScanRepository(settings.scan_database_path)
+    scans.initialize()
     app.state.settings = settings
     app.state.corpus = corpus
+    app.state.scans = scans
     app.state.scanner = ScanService(settings, corpus)
     yield
 
@@ -35,4 +38,3 @@ def create_app() -> FastAPI:
 
 
 app = create_app()
-

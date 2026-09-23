@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "calibrated_on": "2026-09-20",
+  "dataset": "Proofline synthetic pilot passage pairs v1.0",
+  "calibration_split": "validation",
+  "test_split_used": false,
+  "method": "midpoints between adjacent validation-category score ranges",
+  "deployed_modes": {
+    "lexical": {
+      "detection_threshold": 0.15,
+      "medium_threshold": 0.25,
+      "high_threshold": 0.69,
+      "validation_scores": {
+        "paraphrase": [0.0119, 0.1622],
+        "light_edit": [0.3282, 0.3735],
+        "direct_copy": [1.0, 1.0]
+      }
+    },
+    "hybrid": {
+      "detection_threshold": 0.20,
+      "medium_threshold": 0.46,
+      "high_threshold": 0.80,
+      "validation_scores": {
+        "paraphrase": [0.2343, 0.3684],
+        "light_edit": [0.5509, 0.5908],
+        "direct_copy": [1.0, 1.0]
+      }
+    }
+  },
+  "limitation": "Pilot calibration must be repeated on the larger independently reviewed research dataset."
+}

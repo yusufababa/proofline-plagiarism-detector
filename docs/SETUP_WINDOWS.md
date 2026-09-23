@@ -40,7 +40,9 @@ Only enable this after the lexical version works reliably:
 .\.venv\Scripts\python.exe -m pip install -r requirements-semantic.txt
 ```
 
-Then set `SEMANTIC_ENABLED=true` in `.env` and restart the application. The first semantic scan may download model files and use considerably more memory.
+Then set `SEMANTIC_ENABLED=true` in `.env` and restart the application. Keep `SEMANTIC_MINIMUM_MATCH_SCORE=0.20` for the current pilot-calibrated hybrid threshold. The first semantic scan downloads about 87 MB of model files; set `SEMANTIC_CACHE_DIR` if the default `data/models` folder is not writable.
+
+The verified cached pilot used about 503 MB peak process memory, and the completed semantic-enabled virtual environment occupied about 1.02 GB on disk. On a 4 GB laptop, close browsers and other heavy applications before scanning with semantic mode. Set `SEMANTIC_ENABLED=false` whenever the lighter lexical-only mode is preferred.
 
 ## Common problems
 

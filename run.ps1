@@ -25,4 +25,8 @@ if ($LASTEXITCODE -ne 0) {
 $appHost = if ($env:APP_HOST) { $env:APP_HOST } else { '127.0.0.1' }
 $appPort = if ($env:APP_PORT) { $env:APP_PORT } else { '8000' }
 Write-Output "Starting at http://${appHost}:${appPort}"
+if ($env:SEMANTIC_ENABLED -eq 'true') {
+    Write-Output 'Semantic mode is enabled. The first start or scan can take about one minute on a 4 GB laptop.'
+    Write-Output 'Keep this terminal open; wait for "Application startup complete" before opening the page.'
+}
 & '.\.venv\Scripts\python.exe' -m uvicorn app.main:app --host $appHost --port $appPort

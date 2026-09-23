@@ -22,13 +22,18 @@ Implementation evidence:
 - `hybrid.py` defines an explicit, reviewable baseline formula.
 - The API exposes component scores instead of only one unexplained percentage.
 - The dashboard displays matched passages and their source document.
+- `calibration.py` derives evidence-priority bands using validation categories only.
+- `CALIBRATION_RESULTS.md` documents the deployed pilot thresholds and untouched test check.
 
-Still required:
+Pilot evidence now available:
 
-- Labelled training and validation examples.
-- Comparison with logistic-regression fusion.
-- Empirical threshold calibration.
-- Quotation, citation, bibliography, and boilerplate handling.
+- Thirty synthetic labelled passage pairs covering direct copy, light editing, paraphrase, cited quotation, and unrelated text.
+- Source-grouped train, validation, and untouched test splits.
+- A generated feature table containing word, character, and lexical scores.
+- Citation and quotation exclusions evaluated separately from raw textual similarity.
+- Logistic-regression fusion trained on the training split and compared with the weighted baseline.
+
+The pilot calibration must be repeated on the larger independently reviewed dataset before final effectiveness claims are made.
 
 ## Objective 3
 
@@ -42,5 +47,6 @@ Required experimental outputs:
 - Error analysis divided into direct copy, light modification, paraphrase, legitimate quotation, bibliography, and unrelated topical similarity.
 - Ablation results for word, character, and semantic signals.
 
-The application progress percentage is an engineering tracker. It is not an evaluation result and must not be presented as model accuracy.
+The v0.4.0 pilot runner already calculates the required classification metrics, selects thresholds only on validation data, reports runtime and traced Python memory, and exports per-case features. Its small synthetic dataset validates the method but is not sufficient for final effectiveness claims.
 
+The application progress percentage is an engineering tracker. It is not an evaluation result and must not be presented as model accuracy.

@@ -5,6 +5,7 @@ from app.domain.entities import (
     Passage,
     PassageMatch,
     ReferenceDocument,
+    ScanRecord,
     ScanResult,
 )
 
@@ -13,6 +14,6 @@ __all__ = [
     "Passage",
     "PassageMatch",
     "ReferenceDocument",
+    "ScanRecord",
     "ScanResult",
 ]
-

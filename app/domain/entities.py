@@ -8,6 +8,8 @@ from typing import Any
 class Passage:
     text: str
     index: int
+    is_quotation: bool = False
+    has_citation: bool = False
 
 
 @dataclass(frozen=True)
@@ -29,6 +31,19 @@ class ReferenceDocument:
 
 
 @dataclass(frozen=True)
+class ScanRecord:
+    id: str
+    submitted_document: str
+    created_at: str
+    model_mode: str
+    overall_score: float
+    total_passages: int
+    matched_passages: int
+    reviewable_passages: int
+    excluded_passages: int
+
+
+@dataclass(frozen=True)
 class PassageMatch:
     submitted: str
     source: str
@@ -39,6 +54,9 @@ class PassageMatch:
     semantic_score: float | None
     hybrid_score: float
     review_band: str
+    is_quotation: bool = False
+    has_citation: bool = False
+    excluded_from_overall: bool = False
 
 
 @dataclass
@@ -47,10 +65,12 @@ class ScanResult:
     model_mode: str
     total_passages: int
     matched_passages: int
+    reviewable_passages: int
+    excluded_passages: int
     overall_score: float
+    review_thresholds: dict[str, float] = field(default_factory=dict)
     matches: list[PassageMatch] = field(default_factory=list)
     warnings: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
-
