@@ -46,6 +46,22 @@ class SettingsTests(unittest.TestCase):
                 config = Settings.from_environment(Path(directory))
                 self.assertEqual(config.semantic_cache_dir, cache_path)
 
+    def test_environment_can_enable_protected_seeded_demo(self):
+        with tempfile.TemporaryDirectory() as directory, patch.dict(
+            os.environ,
+            {
+                "SEED_DEMO_CORPUS": "true",
+                "APP_ACCESS_USERNAME": "lecturer",
+                "APP_ACCESS_PASSWORD": "private-demo",
+                "DATA_DIR": str(Path(directory) / "hosted-data"),
+            },
+        ):
+            config = Settings.from_environment(Path(directory))
+        self.assertTrue(config.seed_demo_corpus)
+        self.assertEqual(config.access_username, "lecturer")
+        self.assertEqual(config.access_password, "private-demo")
+        self.assertEqual(config.data_dir, Path(directory) / "hosted-data")
+
 
 if __name__ == "__main__":
     unittest.main()

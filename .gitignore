@@ -13,3 +13,12 @@ reports/*
 !reports/.gitkeep
 logs/*
 !logs/.gitkeep
+
+# Research datasets and downloaded model caches must stay local.
+data/pan_pc_11/
+data/models/
+datasets/
+*.rar
+*.7z
+*.safetensors
+*.bin

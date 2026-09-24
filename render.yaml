@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: proofline-plagiarism-detector
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.14
+      - key: SEMANTIC_ENABLED
+        value: "false"
+      - key: SEED_DEMO_CORPUS
+        value: "true"
+      - key: DATA_DIR
+        value: /tmp/proofline-data
+      - key: APP_ACCESS_USERNAME
+        value: proofline
+      - key: APP_ACCESS_PASSWORD
+        sync: false

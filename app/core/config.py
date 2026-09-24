@@ -17,7 +17,7 @@ class Settings:
 
     project_root: Path
     app_name: str = "Explainable Hybrid Plagiarism Detector"
-    app_version: str = "0.12.0"
+    app_version: str = "0.13.0"
     host: str = "127.0.0.1"
     port: int = 8000
     max_upload_mb: int = 10
@@ -32,6 +32,10 @@ class Settings:
     semantic_weight: float = 0.45
     semantic_enabled: bool = False
     semantic_model_name: str = "sentence-transformers/all-MiniLM-L6-v2"
+    seed_demo_corpus: bool = False
+    access_username: str = "proofline"
+    access_password: str = ""
+    data_directory: Path | None = None
 
     @classmethod
     def from_environment(cls, project_root: Path | None = None) -> "Settings":
@@ -65,11 +69,20 @@ class Settings:
                 "SEMANTIC_MODEL_NAME",
                 "sentence-transformers/all-MiniLM-L6-v2",
             ),
+            seed_demo_corpus=_as_bool(os.getenv("SEED_DEMO_CORPUS"), False),
+            access_username=os.getenv("APP_ACCESS_USERNAME", "proofline").strip()
+            or "proofline",
+            access_password=os.getenv("APP_ACCESS_PASSWORD", ""),
+            data_directory=(
+                Path(configured_data_dir).expanduser()
+                if (configured_data_dir := os.getenv("DATA_DIR"))
+                else None
+            ),
         )
 
     @property
     def data_dir(self) -> Path:
-        return self.project_root / "data"
+        return self.data_directory or self.project_root / "data"
 
     @property
     def reference_dir(self) -> Path:
@@ -91,6 +104,10 @@ class Settings:
     def semantic_cache_dir(self) -> Path:
         configured = os.getenv("SEMANTIC_CACHE_DIR")
         return Path(configured).expanduser() if configured else self.data_dir / "models"
+
+    @property
+    def demo_corpus_dir(self) -> Path:
+        return self.project_root / "lecturer_demo" / "Corpus"
 
     @property
     def tracker_path(self) -> Path:

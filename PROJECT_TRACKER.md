@@ -1,7 +1,7 @@
 # Project Build Tracker
 
 Last updated: 2026-09-20
-Current software version: 0.12.0 release candidate
+Current software version: 0.13.0 release candidate
 Engineering completion: 97%
 Current stage: Release candidate - branded welcome composer and results dashboard complete
 

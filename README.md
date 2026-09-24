@@ -4,7 +4,7 @@ A lightweight final-year project for comparing English academic documents with a
 
 ## Current release
 
-Version `0.12.0` release candidate provides:
+Version `0.13.0` release candidate provides:
 
 - TXT, DOCX, and text-based PDF extraction.
 - Text normalization and sentence-level passage segmentation.
@@ -38,6 +38,7 @@ Version `0.12.0` release candidate provides:
 - Downloadable Microsoft Word evidence reports with source passages and model signals.
 - A lecturer-ready technical report and demonstration documents under `lecturer_demo/`.
 - A one-command release-readiness check for tests, syntax, versions, metadata, and report integrity.
+- A Render Blueprint with a fixed Python runtime, health check, protected access, and seeded demo corpus.
 - Unit and service-level automated tests.
 
 ## Quick start on Windows
@@ -64,6 +65,22 @@ Run the complete release-readiness check with:
 
 Detailed setup and troubleshooting are in `docs/SETUP_WINDOWS.md`.
 Local storage, deletion controls, and deployment limitations are explained in `docs/PRIVACY.md`.
+
+## Deploy the protected demo to Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/yusufababa/proofline-plagiarism-detector)
+
+The checked-in `render.yaml` deploys the lightweight lexical version on Render's free web-service plan. During Blueprint creation, Render asks for `APP_ACCESS_PASSWORD`. Share that password and the username `proofline` only with the lecturer.
+
+The hosted demo writes to the configurable `DATA_DIR` and automatically loads the bundled lecturer corpus after a fresh start. The free filesystem is temporary, so newly uploaded reference documents and scan history can disappear after a restart or redeploy. A paid Render service with a persistent disk is required for durable hosted data. MiniLM is deliberately disabled on the 512 MB free service; use the 2 GB plan and install `requirements-semantic.txt` before enabling it.
+
+Render production commands are already defined as:
+
+```text
+Build: pip install --upgrade pip && pip install -r requirements.txt
+Start: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+Health: /api/health
+```
 
 ## Run the model evaluation
 
