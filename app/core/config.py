@@ -17,7 +17,7 @@ class Settings:
 
     project_root: Path
     app_name: str = "Explainable Hybrid Plagiarism Detector"
-    app_version: str = "0.13.0"
+    app_version: str = "0.13.1"
     host: str = "127.0.0.1"
     port: int = 8000
     max_upload_mb: int = 10

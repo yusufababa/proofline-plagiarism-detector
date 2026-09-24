@@ -50,12 +50,11 @@ class WebAccessibilityTests(unittest.TestCase):
         self.assertIn("aria-label=\"Delete saved scan", script)
 
     def test_redesigned_composer_and_dashboard_keep_core_workflows_accessible(self):
-        parser = ElementCollector()
-        parser.feed(
-            (PROJECT_ROOT / "app" / "web" / "templates" / "index.html").read_text(
-                encoding="utf-8"
-            )
+        html = (PROJECT_ROOT / "app" / "web" / "templates" / "index.html").read_text(
+            encoding="utf-8"
         )
+        parser = ElementCollector()
+        parser.feed(html)
         elements = parser.elements
         element_ids = {attrs.get("id") for _, attrs in elements if attrs.get("id")}
         navigation_panels = {
@@ -74,10 +73,11 @@ class WebAccessibilityTests(unittest.TestCase):
             }.issubset(element_ids)
         )
         self.assertTrue(
-            {"overview", "evidence", "history", "library", "project"}.issubset(
-                navigation_panels
-            )
+            {"overview", "evidence", "history", "library"}.issubset(navigation_panels)
         )
+        self.assertNotIn("project", navigation_panels)
+        self.assertNotIn('id="panel-project"', html)
+        self.assertIn("Go to dashboard", html)
 
         script = (PROJECT_ROOT / "app" / "web" / "static" / "app.js").read_text(
             encoding="utf-8"

@@ -60,7 +60,8 @@ svg { width: 1.2em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-
 .text-button { border: 0; background: transparent; color: #5e5e62; padding: 9px 11px; border-radius: 10px; font-size: .8rem; font-weight: 650; cursor: pointer; }
 .text-button:hover { background: #f4f4f2; color: var(--black); }
 .text-button span { min-width: 20px; height: 20px; display: inline-grid; place-items: center; margin-left: 5px; border: 1px solid var(--line); border-radius: 99px; background: #fff; color: var(--black); font-size: .66rem; }
-.avatar-button { width: 38px; height: 38px; border: 1px solid #dededb; border-radius: 50%; background: var(--black); color: #fff; font-size: .68rem; font-weight: 800; cursor: pointer; }
+.dashboard-link-button { min-height: 38px; padding: 0 15px; border: 1px solid var(--black); border-radius: 10px; background: var(--black); color: #fff; font-size: .72rem; font-weight: 750; cursor: pointer; transition: transform .18s ease, background .18s ease; }
+.dashboard-link-button:hover { transform: translateY(-1px); background: #29292b; }
 .welcome-main { position: relative; z-index: 1; width: min(820px, calc(100% - 40px)); margin: auto; padding: 36px 0 82px; }
 .welcome-copy { text-align: center; }
 .eyebrow { margin: 0 0 7px; color: #99999d; font-size: .78rem; font-weight: 650; letter-spacing: .025em; }
@@ -106,7 +107,6 @@ svg { width: 1.2em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-
 .dashboard-wordmark { font-size: 1.32rem; }
 .side-nav { flex: 1; }
 .nav-label { margin: 16px 11px 8px; color: #aaa9ad; font-size: .61rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-.nav-label-second { margin-top: 28px; }
 .nav-item { width: 100%; min-height: 43px; display: flex; align-items: center; gap: 11px; padding: 0 11px; border: 0; border-radius: 10px; background: transparent; color: #69696d; font-size: .78rem; font-weight: 600; text-align: left; cursor: pointer; transition: background .16s, color .16s; }
 .nav-item svg { width: 18px; color: #919195; }
 .nav-item:hover { background: #f0f0ed; color: var(--ink); }

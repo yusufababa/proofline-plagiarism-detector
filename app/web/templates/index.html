@@ -8,7 +8,7 @@
   <title>Proofline — Explainable similarity review</title>
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,800,900&display=swap">
-  <link rel="stylesheet" href="/static/styles.css?v=0.13.0">
+  <link rel="stylesheet" href="/static/styles.css?v=0.13.1">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -19,7 +19,7 @@
         <a class="wordmark" href="#" aria-label="Proofline home">proofline<span>.</span></a>
         <nav aria-label="Quick navigation">
           <button class="text-button" type="button" data-open-panel="library">Source library <span id="welcome-source-count">0</span></button>
-          <button class="avatar-button" type="button" data-open-panel="history" aria-label="Open scan history">PL</button>
+          <button class="dashboard-link-button" type="button" data-open-panel="overview">Go to dashboard</button>
         </nav>
       </header>
 
@@ -79,8 +79,6 @@
           <button class="nav-item" type="button" data-panel="evidence"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h13"/></svg>Evidence<span id="nav-match-count" class="nav-count">0</span></button>
           <button class="nav-item" type="button" data-panel="history"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.6M4 4v4.6h4.6M12 8v5l3 2"/></svg>History</button>
           <button class="nav-item" type="button" data-panel="library"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h6a3 3 0 0 1 3 3v11a3 3 0 0 0-3-3H4zM20 5h-4a3 3 0 0 0-3 3v11a3 3 0 0 1 3-3h4z"/></svg>Source library<span id="nav-source-count" class="nav-count">0</span></button>
-          <p class="nav-label nav-label-second">Project</p>
-          <button class="nav-item" type="button" data-panel="project"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-7"/></svg>Build progress</button>
         </nav>
         <div class="sidebar-foot">
           <div class="model-card"><i></i><div><strong id="sidebar-model-status">Model online</strong><small>Local processing</small></div></div>
@@ -141,17 +139,11 @@
             </div>
           </section>
 
-          <section id="panel-project" class="dashboard-panel" data-panel-content="project" aria-labelledby="project-title">
-            <header class="page-heading"><div><span class="section-kicker">Final year project</span><h1 id="project-title">Build progress</h1><p>Engineering completion, verification, and the remaining research work.</p></div><div class="progress-total"><strong id="overall-percent">—%</strong><span>engineering ready</span></div></header>
-            <div class="project-progress"><i id="overall-bar"></i></div><p id="updated" class="updated-label">Loading project tracker...</p>
-            <div id="objectives" class="objective-grid"></div>
-            <div class="responsible-use-card"><span>✦</span><div><h3>Built for responsible review</h3><p>Proofline surfaces traceable similarity signals. It never makes an automatic academic-misconduct decision.</p></div></div>
-          </section>
         </div>
       </div>
     </section>
   </main>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="/static/app.js?v=0.13.0"></script>
+  <script src="/static/app.js?v=0.13.1"></script>
 </body>
 </html>

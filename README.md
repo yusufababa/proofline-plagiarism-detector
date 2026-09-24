@@ -4,7 +4,7 @@ A lightweight final-year project for comparing English academic documents with a
 
 ## Current release
 
-Version `0.13.0` release candidate provides:
+Version `0.13.1` release candidate provides:
 
 - TXT, DOCX, and text-based PDF extraction.
 - Text normalization and sentence-level passage segmentation.
@@ -14,9 +14,9 @@ Version `0.13.0` release candidate provides:
 - A transparent hybrid scoring baseline.
 - SQLite reference-corpus metadata and duplicate detection.
 - Safe temporary upload handling.
-- A local dashboard with progress tracking and side-by-side evidence.
+- A focused dashboard with scan history, source management, and side-by-side evidence.
 - A Satoshi-led monochrome welcome composer with pasted-text, file-upload, and drag-and-drop scanning.
-- A responsive results workspace with Overview, Evidence, History, Source Library, and Build Progress navigation.
+- A responsive results workspace with Overview, Evidence, History, and Source Library navigation.
 - Visible citation and quotation flags with transparent overall-score exclusions.
 - A leakage-safe synthetic pilot dataset and dependency-free evaluation runner.
 - Precision, recall, F1, false-positive, runtime, and memory measurements.

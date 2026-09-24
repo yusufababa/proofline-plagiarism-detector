@@ -14,7 +14,6 @@ const panelDetails = {
   evidence: ['Evidence', 'Passage evidence'],
   history: ['History', 'Scan history'],
   library: ['Source library', 'Source library'],
-  project: ['Build progress', 'Project progress'],
 };
 
 function escapeHtml(value) {
@@ -237,23 +236,6 @@ async function loadHealth() {
   } catch {
     byId('model-status').textContent = 'Server unavailable';
     byId('sidebar-model-status').textContent = 'Server unavailable';
-  }
-}
-
-async function loadProgress() {
-  try {
-    const data = await fetch('/api/progress').then(readJson);
-    byId('overall-percent').textContent = `${data.overall_percent}%`;
-    byId('overall-bar').style.width = `${data.overall_percent}%`;
-    byId('updated').textContent = `Tracker updated ${data.updated}`;
-    byId('objectives').innerHTML = data.objectives.map(item => `
-      <article class="objective">
-        <div class="objective-head"><h3>Objective ${item.id}: ${escapeHtml(item.title)}</h3><span class="badge">${escapeHtml(item.status.replaceAll('_', ' '))}</span></div>
-        <p>Next: ${escapeHtml(item.next)}</p>
-        <div class="mini-progress"><i style="width:${item.percent}%"></i></div>
-      </article>`).join('');
-  } catch {
-    byId('updated').textContent = 'Tracker unavailable';
   }
 }
 
@@ -546,7 +528,6 @@ setupComposerDropzone();
 setupDropzone('reference-dropzone', 'reference-file', addReferenceFiles);
 setGreeting();
 loadHealth();
-loadProgress();
 loadReferences();
 loadHistory();
 updateScanButton();
