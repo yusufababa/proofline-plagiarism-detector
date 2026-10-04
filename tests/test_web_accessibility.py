@@ -79,6 +79,7 @@ class WebAccessibilityTests(unittest.TestCase):
         self.assertNotIn('id="panel-project"', html)
         self.assertIn("Go to dashboard", html)
         self.assertIn("Aisha Abba Kyari", html)
+        self.assertIn("Aisha Abba Kyari's Final year project", html)
         self.assertIn("Final year project", html)
         self.assertIn('aria-label="Aisha dashboard"', html)
 
