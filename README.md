@@ -4,7 +4,7 @@ A lightweight final-year project for comparing English academic documents with a
 
 ## Current release
 
-Version `0.13.1` release candidate provides:
+Version `0.13.2` release candidate provides:
 
 - TXT, DOCX, and text-based PDF extraction.
 - Text normalization and sentence-level passage segmentation.

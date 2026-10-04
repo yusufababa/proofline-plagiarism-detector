@@ -43,6 +43,7 @@ svg { width: 1.2em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-
 
 .wordmark { color: var(--black); text-decoration: none; font-size: 1.42rem; font-weight: 900; letter-spacing: -.075em; line-height: 1; }
 .wordmark span { color: #8a8a8e; }
+.welcome-nav > .wordmark { white-space: nowrap; }
 
 /* Welcome */
 .welcome-view { min-height: 100vh; background: #fff; display: grid; grid-template-rows: 84px 1fr 64px; position: relative; overflow: hidden; }
@@ -296,7 +297,7 @@ svg { width: 1.2em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-
   .prompt-tools { justify-content: space-between; }
   .source-ready { margin-left: auto; }
   .check-button { width: 100%; justify-content: space-between; }
-  .welcome-footer span:first-child { display: none; }
+  .welcome-footer span:last-child { display: none; }
   .welcome-footer { justify-content: center; }
 
   .sidebar { transform: translateX(-102%); transition: transform .24s ease; box-shadow: var(--shadow-lg); }
@@ -328,6 +329,8 @@ svg { width: 1.2em; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-
 }
 
 @media (max-width: 480px) {
+  .welcome-nav > .wordmark { font-size: .96rem; letter-spacing: -.045em; }
+  .dashboard-link-button { min-height: 35px; padding-inline: 10px; font-size: .65rem; }
   .welcome-nav .text-button { display: none; }
   .welcome-meta { gap: 7px 13px; }
   .source-ready { display: none; }

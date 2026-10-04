@@ -78,6 +78,9 @@ class WebAccessibilityTests(unittest.TestCase):
         self.assertNotIn("project", navigation_panels)
         self.assertNotIn('id="panel-project"', html)
         self.assertIn("Go to dashboard", html)
+        self.assertIn("Aisha Abba Kyari", html)
+        self.assertIn("Final year project", html)
+        self.assertIn('aria-label="Aisha dashboard"', html)
 
         script = (PROJECT_ROOT / "app" / "web" / "static" / "app.js").read_text(
             encoding="utf-8"
